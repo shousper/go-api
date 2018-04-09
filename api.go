@@ -5,8 +5,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/micro/go-micro/registry"
-	"github.com/micro/go-micro/server"
+	"github.com/divisionone/go-micro/registry"
+	"github.com/divisionone/go-micro/server"
 )
 
 const (
