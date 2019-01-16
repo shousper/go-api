@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/micro/go-api/handler"
-	proto "github.com/micro/go-api/proto"
-	"github.com/micro/util/go/lib/ctx"
+	"github.com/divisionone/go-api/handler"
+	proto "github.com/divisionone/go-api/proto"
+	"github.com/divisionone/util/go/lib/ctx"
 	"github.com/pborman/uuid"
 )
 
@@ -101,7 +101,7 @@ func (e *event) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	c := e.options.Service.Client()
 
 	// create publication
-	p := c.NewMessage(topic, ev)
+	p := c.NewPublication(topic, ev)
 
 	// publish event
 	if err := c.Publish(ctx.FromRequest(r), p); err != nil {

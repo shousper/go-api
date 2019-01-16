@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/micro/go-micro/registry"
-	"github.com/micro/go-micro/selector"
-	api "github.com/micro/micro/api/proto"
+	"github.com/divisionone/go-micro/registry"
+	"github.com/divisionone/go-micro/selector"
+	api "github.com/divisionone/micro/api/proto"
 )
 
 func requestToProto(r *http.Request) (*api.Request, error) {
@@ -24,7 +24,6 @@ func requestToProto(r *http.Request) (*api.Request, error) {
 		Header: make(map[string]*api.Pair),
 		Get:    make(map[string]*api.Pair),
 		Post:   make(map[string]*api.Pair),
-		Url:    r.URL.String(),
 	}
 
 	ct, _, err := mime.ParseMediaType(r.Header.Get("Content-Type"))

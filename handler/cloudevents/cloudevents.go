@@ -6,7 +6,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/micro/go-api/handler"
+	"github.com/divisionone/go-api/handler"
 	"github.com/micro/util/go/lib/ctx"
 )
 

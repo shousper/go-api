@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"github.com/micro/go-api/router"
-	"github.com/micro/go-micro"
+	"github.com/divisionone/go-api/router"
+	"github.com/divisionone/go-micro"
 )
 
 type Options struct {

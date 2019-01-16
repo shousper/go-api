@@ -11,9 +11,9 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/micro/go-api"
-	"github.com/micro/go-api/handler"
-	"github.com/micro/go-micro/selector"
+	"github.com/divisionone/go-api"
+	"github.com/divisionone/go-api/handler"
+	"github.com/divisionone/go-micro/selector"
 )
 
 const (

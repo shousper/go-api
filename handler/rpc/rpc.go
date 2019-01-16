@@ -7,15 +7,15 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/divisionone/go-api"
+	"github.com/divisionone/go-api/handler"
+	proto "github.com/divisionone/go-api/internal/proto"
+	"github.com/divisionone/go-micro/client"
+	"github.com/divisionone/go-micro/errors"
+	"github.com/divisionone/go-micro/registry"
+	"github.com/divisionone/go-micro/selector"
+	"github.com/divisionone/util/go/lib/ctx"
 	"github.com/joncalhoun/qson"
-	"github.com/micro/go-api"
-	"github.com/micro/go-api/handler"
-	proto "github.com/micro/go-api/internal/proto"
-	"github.com/micro/go-micro/client"
-	"github.com/micro/go-micro/errors"
-	"github.com/micro/go-micro/registry"
-	"github.com/micro/go-micro/selector"
-	"github.com/micro/util/go/lib/ctx"
 )
 
 const (
@@ -100,12 +100,7 @@ func (h *rpcHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 		// create request/response
 		var response json.RawMessage
-		req := c.NewRequest(
-			service.Name,
-			service.Endpoint.Name,
-			&request,
-			client.WithContentType("application/json"),
-		)
+		req := c.NewJsonRequest(service.Name, service.Endpoint.Name, &request)
 
 		// create context
 		cx := ctx.FromRequest(r)

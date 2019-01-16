@@ -7,7 +7,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/micro/go-api/resolver"
+	"github.com/divisionone/go-api/resolver"
 )
 
 type Resolver struct{}

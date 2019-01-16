@@ -8,11 +8,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/micro/go-api/handler"
-	"github.com/micro/go-api/router"
-	"github.com/micro/go-micro/cmd"
-	"github.com/micro/go-micro/registry"
-	rmock "github.com/micro/go-micro/registry/mock"
+	"github.com/divisionone/go-api/handler"
+	"github.com/divisionone/go-api/router"
+	"github.com/divisionone/go-micro/cmd"
+	"github.com/divisionone/go-micro/registry"
+	rmock "github.com/divisionone/go-micro/registry/mock"
 )
 
 func testHttp(t *testing.T, path, service string) {
@@ -36,7 +36,7 @@ func testHttp(t *testing.T, path, service string) {
 	s := &registry.Service{
 		Name: service,
 		Nodes: []*registry.Node{
-			&registry.Node{
+			{
 				Id:      service + "-1",
 				Address: host,
 				Port:    port,
